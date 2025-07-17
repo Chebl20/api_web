@@ -1,0 +1,12 @@
+<h1>Editar Livro</h1>
+<form method="POST">
+  <input name="titulo" value="<%- typeof old !== 'undefined' ? old.titulo || livro.titulo : livro.titulo %>">
+  <input name="editora" value="<%- typeof old !== 'undefined' ? old.editora || livro.editora : livro.editora %>">
+  <input name="autor" value="<%- typeof old !== 'undefined' ? old.autor || livro.autor : livro.autor %>">
+  <input name="ano" value="<%- typeof old !== 'undefined' ? old.ano || livro.ano : livro.ano %>">
+  <input name="assunto" value="<%- typeof old !== 'undefined' ? old.assunto || livro.assunto : livro.assunto %>">
+  <% errors.forEach(error => { %>
+    <p style="color:red"><%= error.msg %></p>
+  <% }) %>
+  <button type="submit">Atualizar</button>
+</form>

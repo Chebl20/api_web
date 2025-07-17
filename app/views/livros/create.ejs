@@ -1,0 +1,13 @@
+<h1>Novo Livro</h1>
+<form method="POST">
+  <input name="isbn" placeholder="ISBN" value="<%- typeof old !== 'undefined' ? old.isbn || '' : '' %>">
+  <input name="titulo" placeholder="Título" value="<%- typeof old !== 'undefined' ? old.titulo || '' : '' %>">
+  <input name="editora" placeholder="Editora" value="<%- typeof old !== 'undefined' ? old.editora || '' : '' %>">
+  <input name="autor" placeholder="Autor" value="<%- typeof old !== 'undefined' ? old.autor || '' : '' %>">
+  <input name="ano" placeholder="Ano" value="<%- typeof old !== 'undefined' ? old.ano || '' : '' %>">
+  <input name="assunto" placeholder="Assunto" value="<%- typeof old !== 'undefined' ? old.assunto || '' : '' %>">
+  <% errors.forEach(error => { %>
+    <p style="color:red"><%= error.msg %></p>
+  <% }) %>
+  <button type="submit">Salvar</button>
+</form>
