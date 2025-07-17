@@ -155,18 +155,3 @@ Para acessar a interface web, visite:
 ```
 http://localhost:3000/livros
 ```
-📚 Tutorial base recomendado
-Esse projeto foi baseado e adaptado a partir do seguinte tutorial completo:
-
-👉 Tutorial CRUD Node.js + Express + EJS + MySQL
-(Atualize com o link real que você usou)
-
-## 👨‍💻 Autor
-
-Atividade de implementação prática para a disciplina de LPWeb.
-
-Desenvolvido por Gpeto para meu Amigo 👊😉
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
