@@ -1,7 +1,18 @@
 # 📚 CRUD de Livros com Node.js, Express, EJS e MySQL
 
-Este projeto implementa um sistema completo de **CRUD (Create, Read, Update, Delete)** para a entidade **Livro**, utilizando:
+Este projeto implementa um sistema completo de **CRUD (Create, Read, Update, Delete)** para a entidade **Livro**, oferecendo tanto uma interface web com EJS quanto uma API REST para integração com outros sistemas.
 
+### 💻 Interface Web
+- Views em EJS para interação via navegador
+- Formulários para criar e editar livros
+- Validação de dados com feedback visual
+
+### 🔗 API REST
+- Endpoints JSON para integração
+- Respostas padronizadas
+- Suporte a ferramentas como Postman
+
+### 🛠️ Tecnologias
 - `Node.js` como runtime
 - `Express.js` como framework
 - `EJS` para renderização de views HTML
@@ -86,16 +97,20 @@ arduino
 Copiar
 Editar
 http://localhost:3000
-📬 Requisições com Postman
-➕ Criar Livro
-pgsql
-Copiar
-Editar
-POST /livros/create
+## 📬 API REST
+
+### Endpoints Disponíveis
+
+#### 🔍 Listar Livros
+```http
+GET /api/livros
+```
+
+#### ➕ Criar Livro
+```http
+POST /api/livros
 Content-Type: application/json
-json
-Copiar
-Editar
+
 {
   "isbn": "9781234567890",
   "titulo": "Node.js Avançado",
@@ -104,53 +119,54 @@ Editar
   "ano": 2024,
   "assunto": "Backend"
 }
-📖 Listar todos os livros
-bash
-Copiar
-Editar
-GET /livros
-✏️ Atualizar um livro
-bash
-Copiar
-Editar
-PUT /livros/:isbn
-Content-Type: application/json
-json
-Copiar
-Editar
-{
-  "titulo": "Node.js Atualizado",
-  "editora": "TechBooks Pro",
-  "autor": "Gpeto da Atualização",
-  "ano": 2025,
-  "assunto": "Back-End Avançado"
-}
-❌ Deletar um livro
-sql
-Copiar
-Editar
-DELETE /livros/delete/:isbn
-⚠️ Se sua aplicação não tiver rota DELETE, use:
+```
 
-arduino
-Copiar
-Editar
-POST /livros/delete/:isbn
+### Respostas da API
+
+#### ✅ Sucesso (201 Created)
+```json
+{
+  "success": true,
+  "message": "Livro criado com sucesso",
+  "data": {
+    "isbn": "9781234567890",
+    "titulo": "Node.js Avançado"
+    // ... outros campos
+  }
+}
+```
+
+#### ❌ Erro de Validação (400 Bad Request)
+```json
+{
+  "success": false,
+  "errors": [
+    {
+      "msg": "ISBN é obrigatório",
+      "param": "isbn"
+    }
+  ]
+}
+```
+
+## 🌐 Interface Web
+
+Para acessar a interface web, visite:
+```
+http://localhost:3000/livros
+```
 📚 Tutorial base recomendado
 Esse projeto foi baseado e adaptado a partir do seguinte tutorial completo:
 
 👉 Tutorial CRUD Node.js + Express + EJS + MySQL
 (Atualize com o link real que você usou)
 
-👨‍💻 Autor
+## 👨‍💻 Autor
+
 Atividade de implementação prática para a disciplina de LPWeb.
 
 Desenvolvido por Gpeto para meu Amigo 👊😉
 
-yaml
-Copiar
-Editar
+## 📄 Licença
 
----
-
-Se quiser, posso gerar esse README já salvo num arquivo `.md` ou incluir prints, instruções extras para o Docker, o
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
